@@ -2,8 +2,7 @@
 
 <div class="page-content">
   <h1>Your Booking History</h1>
-
-  <table class="booking-table">
+  <table class="booking-table" *ngIf="bookings && bookings.length > 0">
     <thead>
       <tr>
         <th>Booking ID</th>
@@ -21,4 +20,7 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="bookings.length === 0" style="margin-top:32px; color:#c00;">
+    No previous bookings found.
+  </div>
 </div>

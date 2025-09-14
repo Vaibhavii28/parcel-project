@@ -30,4 +30,8 @@ export class TrackingService {
   getBookingById(id: string | number): Observable<Tracking> {
     return this.http.get<Tracking>(`${this.baseUrl}/${id}`);
   }
+
+  getBookingsByUserId(userId: string): Observable<Tracking[]> {
+    return this.http.get<Tracking[]>(`${this.baseUrl}/user/${userId}`);
+  }
 }

@@ -29,7 +29,7 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
 
   /**
-   * Attempt to login with email and password by calling backend /api/auth/login
+   * Attempt to login with email and password by calling backend 
    * Stores user profile on success, returns Observable<boolean>
    */
   login(email: string, password: string): Observable<boolean> {

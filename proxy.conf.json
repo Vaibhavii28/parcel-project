@@ -5,12 +5,6 @@
     "changeOrigin": true,
     "logLevel": "debug"
   },
-  "/api/auth": {
-    "target": "http://localhost:8081",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug"
-  },
   "/api/bookings": {
     "target": "http://localhost:8082",
     "secure": false,
