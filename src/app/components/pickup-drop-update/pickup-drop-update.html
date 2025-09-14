@@ -2,7 +2,6 @@
 
 <div class="page-content">
   <h1>Update Pickup / Drop Status</h1>
-
   <form (ngSubmit)="updateStatus()" class="update-form">
     <input
       type="text"
@@ -13,12 +12,11 @@
     />
 
     <select [(ngModel)]="status" name="status" required>
-      <option value="" disabled selected>Select Status</option>
-      <option value="Pending Pickup">Pending Pickup</option>
-      <option value="Picked Up">Picked Up</option>
-      <option value="In Transit">In Transit</option>
-      <option value="Out for Delivery">Out for Delivery</option>
-      <option value="Delivered">Delivered</option>
+      <option value="" disabled>Select Status</option>
+      <option value="BOOKED">Booked</option>
+      <option value="IN_TRANSIT">In Transit</option>
+      <option value="DELIVERED">Delivered</option>
+      <option value="RETURNED">Returned</option>
     </select>
 
     <button type="submit">Update</button>

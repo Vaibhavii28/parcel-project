@@ -1,65 +1,48 @@
+/* booking-history-officer.css */
 .page-content {
   padding: 20px;
+  text-align: center;
 }
 
 h1 {
   margin-bottom: 20px;
-  text-align: center;
-  color: #1b5e20;
+  color: #1b5e20; /* officer green */
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.booking-table {
+  width: 85%;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: white;
 }
 
-thead {
-  background: #43a047;
+.booking-table th,
+.booking-table td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.booking-table th {
+  background-color: #2e7d32;
   color: white;
 }
 
-th,
-td {
-  padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-  background: #f1f8e9;
+.booking-table tr:nth-child(even) {
+  background-color: #f5f5f5;
 }
 
 button {
   padding: 6px 12px;
-  margin: 2px;
+  background-color: #43a047;
   border: none;
+  color: white;
   border-radius: 4px;
   cursor: pointer;
-  color: white;
+  transition: background 0.2s ease-in;
 }
 
-button.approve {
-  background: #2e7d32;
-}
-
-button.approve:hover {
-  background: #1b5e20;
-}
-
-button.deny {
-  background: #c62828;
-}
-
-button.deny:hover {
-  background: #8e0000;
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+button:hover {
+  background-color: #2e7d32;
 }

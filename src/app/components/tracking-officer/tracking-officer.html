@@ -14,7 +14,25 @@
     <button type="submit">Track</button>
   </form>
 
-  <div *ngIf="trackingResult" class="result">
-    {{ trackingResult }}
+  <div *ngIf="errorMessage" class="error-message not-found">
+    🚫 {{ errorMessage }}
+  </div>
+
+  <div *ngIf="trackingResult" class="result-card">
+    <h2>Status:
+      <span [ngClass]="{
+        'status-booked': trackingResult?.parStatus === 'BOOKED',
+        'status-delivered': trackingResult?.parStatus === 'DELIVERED',
+        'status-cancelled': trackingResult?.parStatus === 'CANCELLED'
+      }">{{ trackingResult?.parStatus }}</span>
+    </h2>
+    <div class="detail"><strong>Recipient Name:</strong> {{ trackingResult?.recName }}</div>
+    <div class="detail"><strong>Recipient Address:</strong> {{ trackingResult?.recAddress }}</div>
+    <div class="detail"><strong>Contact:</strong> {{ trackingResult?.recMobile }}</div>
+    <div class="detail"><strong>Parcel:</strong> {{ trackingResult?.parContentsDescription }} ({{ trackingResult?.parWeightGram }}g)</div>
+    <div class="detail"><strong>Delivery Type:</strong> {{ trackingResult?.parDeliveryType }}</div>
+    <div class="detail"><strong>Packing:</strong> {{ trackingResult?.parPackingPreference }}</div>
+    <div class="detail"><strong>Pickup Time:</strong> {{ trackingResult?.parPickupTime | date:'medium' }}</div>
+    <div class="detail"><strong>Service Cost:</strong> ₹{{ trackingResult?.parServiceCost }}</div>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Booking {
+  bookingId?: number;
   userId: number;
   recName: string;
   recAddress: string;
@@ -14,6 +15,7 @@ export interface Booking {
   parPackingPreference: string;
   parPickupTime: string;
   parServiceCost: string;
+  parStatus?: string; 
 }
 
 @Injectable({
@@ -27,7 +29,18 @@ export class BookingService {
   createBooking(booking: Booking): Observable<any> {
     return this.http.post(this.apiUrl, booking);
   }
+
+  getAllBookings(): Observable<Booking[]> {
+    return this.http.get<Booking[]>(this.apiUrl);
+  }
   
+  getBookingById(id: string | number): Observable<Booking> {
+    return this.http.get<Booking>(`${this.apiUrl}/${id}`);
+  }
+
+  updateBooking(booking: Booking): Observable<any> {
+  return this.http.put(`${this.apiUrl}/${booking.bookingId}`, booking);
+}
 }
 
 
